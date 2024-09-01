@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  margin: 0;
+  padding: 3%;
+  height: 100vh;
+  background-color: rgb(46, 46, 46);
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+p{
+  color:black;
+}
+.carousel__item {
+  display: flex !important;
+  flex-direction: column;
+  margin-right: 20px;
+  border: 8px solid white;
+  border-radius: 18px;
+  background-color: white;
+}
+.slick-slider {
+  display: flex !important;
+  align-items: center;
+  gap: 3%;
+}
