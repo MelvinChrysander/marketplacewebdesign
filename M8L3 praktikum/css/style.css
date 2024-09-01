@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+/* Styles umum */
 body {
   margin: 0;
   padding: 3%;
@@ -9,8 +8,13 @@ body {
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
 }
-p{
-  color:black;
+
+p {
+  color: black;
+}
+
+.list__item a{
+  color:white
 }
 .carousel__item {
   display: flex !important;
@@ -20,8 +24,122 @@ p{
   border-radius: 18px;
   background-color: white;
 }
+
 .slick-slider {
   display: flex !important;
   align-items: center;
   gap: 3%;
+}
+
+/* Navbar */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vh 5vw;
+  border: 1px solid #fff;
+  position: relative;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+}
+
+/* Burger Menu */
+.burger-menu {
+  display: none; /* Default hide burger menu */
+}
+
+/* Responsive Burger Menu */
+@media (min-width: 320px) and (max-width: 700px) {
+  .burger-menu {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 5vw;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 3;
+    transition: 0.3s ease;
+  }
+
+  .burger-menu::before,
+  .burger-menu::after {
+    content: ''; /* konten kosong */
+    background: #fff; /* warna burger */
+    position: absolute;
+    width: 100%;
+    height: 2px; /* ketebalan garis burger */
+    transition: 0.3s ease;
+  }
+
+  .burger-menu::before {
+    top: 0; /* posisi "bun" atas burger */
+  }
+
+  .burger-menu span {
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    top: 9px;
+    height: 2px;
+  }
+
+  .burger-menu::after {
+    bottom: 0;
+  }
+
+  /* Menu */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    background: #272727;
+    border: 1px solid #fff;
+    padding: 20px 10px;
+    transform: translateX(100%);
+    z-index: 2;
+    transition: 0.3s ease;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    text-align: right;
+  }
+
+  /* Burger Menu Aktif */
+  .burger-menu.active {
+    z-index: 3;
+    right: 55vw; /* Atur posisi burger-menu sesuai dengan posisi sidebar */
+  }
+
+  .burger-menu.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+
+  .burger-menu.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+
+  .burger-menu.active span {
+    transform: scale(0);
+  }
+
+  .main-nav.active {
+    transform: translateX(0);
+  }
 }
